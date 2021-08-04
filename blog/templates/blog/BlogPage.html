@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{%block content%}
+<div class="container-fluid mt-5 p-4">
+<!--<h3 class = "text-success fw-bold ps-5 ms-5">Recent Blogs</h3>-->
+
+
+
+<div class="my-5 mx-auto px-5 py-2 w-75 justify-content-evenly shadow bg-light border border-2 border-success overflow-hidden" >
+	<h3 class = "m-2 text-success fw-bold"><a class = "text-decoration-none text-success"href="/blog/{{data.id}}"> {{data.name}}</a></h3>
+	
+	<div class = "overflow-hidden m-2 align-bottom" >
+		<span class = "text-success float-start fs-5 w-50 text-wrap">
+		<a class = "text-decoration-none text-success"href="/blogger/{{data.author.id}}">Posted by {{data.author.user}}</a>
+		</span>
+		
+		<span class="text-success float-end fw-light" >Posted on {{data.post_date}}</span>
+		
+		
+	</div>
+	<p class="m-3 ml-4 mt-5 text-wrap text-success fs-5">{{data.description}}</p>
+</div>
+		
+
+
+
+</div>
+
+{%endblock%}

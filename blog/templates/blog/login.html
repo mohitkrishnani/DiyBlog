@@ -1,0 +1,26 @@
+{%extends "base.html" %}
+{%block content%}
+
+	<h4 class="my-1 text-center text-success">Please Login to continue</h4>
+	<div class="w-50 m-auto my-5 p-3 ">
+	<form action="/try-login" class = "overflow-hidden" method = "POST">
+		{%csrf_token%}
+		<div class = "form-group p-3 w-75 m-auto overflow-hidden">
+			<label for="username" class="p-1 fs-4 text-success float-start" >Enter Username</label>
+			<input type="text" name="username" class=" w-50 float-end p-1" required></input>
+		
+		</div>
+		
+		
+		<div class = "form-group p-3 w-75 m-auto overflow-hidden">
+			<label for="password" class="p-1 fs-4 text-success float-start" >Enter Password</label>
+			<input type="password" name="password" class=" w-50 float-end p-1" required></input>
+		
+		</div >
+		<div class = "form-group p-3 mx-auto text-center overflow-hidden">
+			<button class="btn-success p-2 btn-raised shadow rounded" >Login</button>
+		</div>
+	</form>
+	</div>
+	
+{% endblock %}

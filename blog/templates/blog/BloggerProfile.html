@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{%block content%}
+
+<div class = "bg-light text-center display-block border border-2 border-success p-5" >
+	<div class="border border-2 border-success rounded-circle mx-auto mt-3" style="width:10%;">
+		<i class="fa fa-user text-success" style="font-size:120px;"></i>
+	</div>
+	<h3 class="text-success">{{data.user.username}}</h3>
+	<h4 class="text-success">{{data.user.email}}</h4>
+	<h6 class="text-success">{{data.bio}}</h6>
+	
+</div>
+<h2 class="text-success m-4">Posts: </h2>
+<div class="container-fluid mt-5 p-4">
+
+{%for item in author%}
+
+<div class="my-5 mx-auto px-5 py-2 w-75 justify-content-evenly shadow bg-light border border-2 border-success overflow-hidden" >
+	<h3 class = "m-2 text-success fw-bold"><a class = "text-decoration-none text-success"  href="/blogs/{{item.id}}"> {{item.name}}</a></h3>
+	
+	<div class = "overflow-hidden m-2 align-bottom" >
+		<span class = "text-success float-start fs-5 w-50 text-wrap">
+		<a class = "text-decoration-none text-success"href="/blogger/{{item.author.id}}">Posted by {{item.author.user}}</a>
+		</span>
+		
+		<span class="text-success float-end fw-light" >Posted on {{item.post_date}}</span>
+	</div>
+	<!--<p class="m-4 w-75 text-wrap">{{item.description}}</p>-->
+</div>
+{%endfor%}
+</div>
+
+{%endblock%}
